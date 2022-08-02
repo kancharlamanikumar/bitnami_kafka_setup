@@ -110,6 +110,6 @@ spec:
         - name: KAFKA_CFG_LISTENERS
           value: CLIENT://:9092,EXTERNAL://:31095
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: CLIENT://10.8.7.103:9092,EXTERNAL://10.8.7.103:31095
+          value: CLIENT://10.8.7.103:9092,EXTERNAL://34.170.80.65:31095
         - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
           value: CLIENT
