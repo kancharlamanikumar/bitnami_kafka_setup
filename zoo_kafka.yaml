@@ -34,7 +34,7 @@ kind: StatefulSet
 metadata:
   name: crs-zookeeper
 spec:
-  replicas: 2
+  replicas: 3
   serviceName: zookeeper-cluster
   selector:
     matchLabels:
@@ -48,6 +48,9 @@ spec:
       containers:
       - name: zookeeper
         image: bitnami/zookeeper:latest
+        volumeMounts:
+        - mountPath: /opt
+          name: test-volume
         securityContext:
           runAsUser: 0 
         ports:
