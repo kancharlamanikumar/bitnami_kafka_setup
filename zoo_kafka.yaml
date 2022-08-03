@@ -72,10 +72,15 @@ spec:
         volumeMounts:
         - name: kafka-storage
           mountPath: /opt
-volumes:
-  - name: kafka-storage
-    persistentVolumeClaim:
-        claimName: webapps-storage
+volumeClaimTemplates:
+- metadata:
+    name: kafka-storage
+  spec:
+    accessModes: [ "ReadWriteOnce" ]
+    storageClassName: "webapps-storage"
+    resources:
+      requests:
+        storage: 10Gi
 ---
 apiVersion: apps/v1
 kind: StatefulSet
