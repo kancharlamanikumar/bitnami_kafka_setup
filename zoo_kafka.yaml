@@ -75,7 +75,7 @@ spec:
       volumes:
 	- name: kafka-data
           persistentVolumeClaim:
-            claimName: webapps-storage
+              claimName: webapps-storage
           
 ---
 apiVersion: apps/v1
