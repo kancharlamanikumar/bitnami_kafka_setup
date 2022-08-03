@@ -105,14 +105,11 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-      #  - name: KAFKA_CFG_LISTENERS
-       #   value: 10.4.0.22:9092
-       # - name: KAFKA_CFG_ADVERTISED_LISTENERS
-        #  value: 10.4.0.22:9092
+        #- name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+        #  value: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
           
         
-        #- name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
-         # value: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+        #
         #- name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
          # value: CLIENT
         #- name: KAFKA_CFG_LISTENERS
