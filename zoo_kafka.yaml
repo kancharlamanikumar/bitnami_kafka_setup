@@ -106,9 +106,9 @@ spec:
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
         - name: KAFKA_CFG_LISTENERS
-          value: 127.0.0.1:9092
+          value: 10.4.0.22:9092
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: 127.0.0.1:9092
+          value: 10.4.0.22:9092
           
         
         #- name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
