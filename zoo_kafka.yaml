@@ -77,7 +77,7 @@ spec:
       name: kafka-storage
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "webapps-storage"
+      storageClassName: "kafka-storage"
       resources:
         requests:
           storage: 10Gi          
@@ -127,7 +127,7 @@ spec:
       name: kafka-storage
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "webapps-storage"
+      storageClassName: "kafka-storage"
       resources:
         requests:
           storage: 10Gi 
