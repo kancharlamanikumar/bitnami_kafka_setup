@@ -80,7 +80,7 @@ spec:
       storageClassName: "kafka-storage"
       resources:
         requests:
-          storage: 10Gi          
+          storage: 50Gi          
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -130,7 +130,7 @@ spec:
       storageClassName: "kafka-storage"
       resources:
         requests:
-          storage: 10Gi 
+          storage: 50Gi 
        # - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
        #   value: INTERNAL
        # - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
