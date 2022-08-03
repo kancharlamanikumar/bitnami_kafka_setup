@@ -110,7 +110,7 @@ spec:
         - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
           value: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
         - name: KAFKA_CFG_LISTENERS
-          value: INTERNAL://localhost:9027,EXTERNAL://kafka-0.kafka-cluster.default.svc.cluster.local:9092
+          value: INTERNAL://0.0.0.0:9027,EXTERNAL://0.0.0.0:9037
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
           value: INTERNAL://localhost:9027,EXTERNAL://kafka-0.kafka-cluster.default.svc.cluster.local:9092
         
