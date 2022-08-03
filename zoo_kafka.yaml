@@ -48,8 +48,16 @@ spec:
       containers:
       - name: zookeeper
         image: bitnami/zookeeper:latest
-        securityContext:
-          runAsUser: 0 
+        volumeMounts:
+        - name: test-volume
+          mountPath: /opt
+      securityContext:
+          runAsUser: 0
+      volumes:
+      - name: test-volume
+        gcePersistentDisk:
+          pdName: my-data-disk
+          fsType: ext4 
         ports:
         - containerPort: 2181
         - containerPort: 2888
@@ -66,15 +74,7 @@ spec:
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
         - name: ZOO_SERVERS
-          value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888
-        volumeMounts:
-        - name: test-volume
-          mountPath: /opt/bitnami    
-      volumes:
-      - name: test-volume
-        gcePersistentDisk:
-          pdName: my-data-disk
-          fsType: ext4  
+          value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888         
 ---
 apiVersion: apps/v1
 kind: StatefulSet
