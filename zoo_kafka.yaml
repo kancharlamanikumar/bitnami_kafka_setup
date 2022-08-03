@@ -111,9 +111,9 @@ spec:
           value: CLIENT
         - name: KAFKA_CFG_LISTENERS
          # value: CLIENT://:9092,EXTERNAL://:31776
-          value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:31776
+          value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092:31776,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9092:31776
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:31776
+          value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092:31776,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9092:31776
         
         
         
