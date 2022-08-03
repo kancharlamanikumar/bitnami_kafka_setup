@@ -35,46 +35,46 @@ metadata:
   name: crs-zookeeper
 spec:
   replicas: 3
-  serviceName: zookeeper-cluster
   selector:
     matchLabels:
       app: zookeeper-cluster
+  serviceName: zookeeper-cluster
   template:
     metadata:
       labels:
-        component: zookeeper-cluster
         app: zookeeper-cluster
+        component: zookeeper-cluster
     spec:
       containers:
-      - name: zookeeper
-        image: bitnami/zookeeper:latest
+      - image: bitnami/zookeeper:latest
+        name: zookeeper
         volumeMounts:
-        - name: test-volume
-          mountPath: /opt
+        - mountPath: /opt
+          name: test-volume
       securityContext:
-          runAsUser: 0
+        runAsUser: 0
       volumes:
-      - name: test-volume
+      - env:
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        - name: ZOO_SERVERS
+          value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888
         gcePersistentDisk:
+          fsType: ext4
           pdName: my-data-disk
-          fsType: ext4 
-        ports:
-        - containerPort: 2181
-        - containerPort: 2888
-        - containerPort: 3888
         lifecycle:
           postStart:
             exec:
               command:
-                - "sh"
-                - "-c"
-                - >
-                  echo $(( $(cat /etc/hosts | grep zookeeper | awk '{print($3)}' | awk '{split($0,array,"-")} END{print array[3]}') + 1 )) > /bitnami/zookeeper/data/myid
-        env:
-        - name: ALLOW_ANONYMOUS_LOGIN
-          value: "yes"
-        - name: ZOO_SERVERS
-          value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888         
+              - sh
+              - -c
+              - |
+                echo $(( $(cat /etc/hosts | grep zookeeper | awk '{print($3)}' | awk '{split($0,array,"-")} END{print array[3]}') + 1 )) > /bitnami/zookeeper/data/myid
+        name: test-volume
+        ports:
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
 ---
 apiVersion: apps/v1
 kind: StatefulSet
