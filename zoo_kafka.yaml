@@ -105,21 +105,16 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
+        - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
+          value: INTERNAL
+        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+          value: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
         - name: KAFKA_CFG_LISTENERS
-          value: PLAINTEXT://0.0.0.0:9092
+          value: INTERNAL://0.0.0.0:9027,EXTERNAL://0.0.0.0:9037
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: PLAINTEXT://0.0.0.0:9092
+          value: INTERNAL://localhost:9027,EXTERNAL://kafka-0.kafka-cluster.default.svc.cluster.local:9092
         
           
-        
-        #
-        #- name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
-         # value: CLIENT
-        #- name: KAFKA_CFG_LISTENERS
-         # value: CLIENT://:9092,EXTERNAL://:31776
-       #   value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092:31776,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9092:31776
-        #- name: KAFKA_CFG_ADVERTISED_LISTENERS
-         # value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092:31776,EXTERNAL://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9092:31776
         
         
         
