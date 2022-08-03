@@ -73,7 +73,7 @@ spec:
         - name: kafka-storage
           mountPath: /opt
       volumes:
-	- name: kafka-data
+	- name: kafka-storage
           persistentVolumeClaim:
               claimName: webapps-storage
           
