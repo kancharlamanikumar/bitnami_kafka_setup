@@ -57,15 +57,15 @@ spec:
         volumeMounts:
         - name: kafka-storage
           mountPath: /opt 
-  volumeClaimTemplates:
-  - metadata:
-      name: kafka-data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "kafka-storage"
-      resources:
-        requests:
-          storage: 10Gi
+   volumeClaimTemplates:
+   - metadata:
+       name: kafka-data
+     spec:
+       accessModes: [ "ReadWriteOnce" ]
+       storageClassName: "kafka-storage"
+       resources:
+         requests:
+           storage: 10Gi
         lifecycle:
           postStart:
             exec:
