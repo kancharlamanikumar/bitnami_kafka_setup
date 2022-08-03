@@ -105,14 +105,14 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-        - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
-          value: INTERNAL
-        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
-          value: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
-        - name: KAFKA_CFG_LISTENERS
-          value: INTERNAL://localhost:9092,EXTERNAL://34.123.182.216:31941
-        - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: INTERNAL://localhost:9092,EXTERNAL://34.123.182.216:31941
+       # - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
+       #   value: INTERNAL
+       # - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+       #   value: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+       # - name: KAFKA_CFG_LISTENERS
+        #  value: INTERNAL://localhost:9092,EXTERNAL://34.123.182.216:31941
+       # - name: KAFKA_CFG_ADVERTISED_LISTENERS
+       #   value: INTERNAL://localhost:9092,EXTERNAL://34.123.182.216:31941
         
           
         
