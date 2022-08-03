@@ -69,7 +69,9 @@ spec:
           value: "yes" 
         - name: ZOO_SERVERS
           value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888
-          
+        volumeMounts:
+        - name: kafka-storage
+          mountPath: /opt 
 ---
 apiVersion: apps/v1
 kind: StatefulSet
