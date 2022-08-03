@@ -55,12 +55,17 @@ spec:
         - containerPort: 2888
         - containerPort: 3888
         volumeMounts:
-        - name: kafka-data
+        - name: kafka-storage
           mountPath: /opt 
-  volumes:
-  - name: kafka-data
-    persistentVolumeClaim:
-        claimName: webapps-storage
+  volumeClaimTemplates:
+  - metadata:
+      name: kafka-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "kafka-storage"
+      resources:
+        requests:
+          storage: 10Gi
         lifecycle:
           postStart:
             exec:
