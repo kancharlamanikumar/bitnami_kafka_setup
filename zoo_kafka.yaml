@@ -127,7 +127,8 @@ spec:
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
           value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092,REPLICATION://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9093,INTERNAL_PLAINTEXT://crs-kafka-2.kafka-cluster.default.svc.cluster.local:9094,INTERNAL_SASL://crs-kafka-2.kafka-cluster.default.svc.cluster.local:9095
         - name: KAFKA_CFG_LISTENERS
-          value: CLIENT://10.4.2.9:9092,REPLICATION://10.4.1.5:9093,INTERNAL_PLAINTEXT://10.4.0.5:9094,INTERNAL_SASL://10.4.0.5:9095
+          #value: CLIENT://10.4.2.9:9092,REPLICATION://10.4.1.5:9093,INTERNAL_PLAINTEXT://10.4.0.5:9094,INTERNAL_SASL://10.4.0.5:9095
+          value: CLIENT://crs-kafka-0.kafka-cluster.default.svc.cluster.local:9092,REPLICATION://crs-kafka-1.kafka-cluster.default.svc.cluster.local:9093,INTERNAL_PLAINTEXT://crs-kafka-2.kafka-cluster.default.svc.cluster.local:9094,INTERNAL_SASL://crs-kafka-2.kafka-cluster.default.svc.cluster.local:9095
       #  volumeMounts:
        # - name: webapps-storage
         #  mountPath: /bitnami/zookeeper
