@@ -120,8 +120,6 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-      #  - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
-       #   value: INTERNAL
         - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
           value: CLIENT:SASL_PLAINTEXT,REPLICATION:PLAINTEXT,INTERNAL_PLAINTEXT:PLAINTEXT,INTERNAL_SASL:SASL_PLAINTEXT
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
@@ -140,7 +138,7 @@ spec:
      # resources:
       #  requests:
        #   storage: 50Gi 
-       - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
+   #    - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
        #   value: INTERNAL
        # - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
        #   value: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
