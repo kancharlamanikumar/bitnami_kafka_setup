@@ -121,7 +121,7 @@ spec:
           value: "yes" 
         volumeMounts:
         - name: webapps-storage
-          mountPath: /
+          mountPath: /bitnami/zookeeper
   volumeClaimTemplates:
   - metadata:
       name: webapps-storage
