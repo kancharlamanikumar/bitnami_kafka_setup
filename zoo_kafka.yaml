@@ -120,9 +120,9 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-        volumeMounts:
-        - name: webapps-storage
-          mountPath: /bitnami/zookeeper
+      #  volumeMounts:
+       # - name: webapps-storage
+        #  mountPath: /bitnami/zookeeper
  # volumeClaimTemplates:
   #- metadata:
    #   name: webapps-storage
