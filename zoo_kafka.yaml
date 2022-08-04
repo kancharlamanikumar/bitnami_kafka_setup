@@ -30,7 +30,8 @@ spec:
   type: LoadBalancer
 ---
 apiVersion: apps/v1
-kind: StatefulSet
+#kind: StatefulSet
+kind: Deployment
 metadata:
   name: crs-zookeeper
 spec:
@@ -83,8 +84,8 @@ spec:
           storage: 50Gi          
 ---
 apiVersion: apps/v1
-kind: StatefulSet
-#kind: Deployment
+#kind: StatefulSet
+kind: Deployment
 metadata:
   name: crs-kafka
 spec:
